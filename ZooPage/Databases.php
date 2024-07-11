@@ -1,7 +1,7 @@
 <?php
 $dbhost = 'localhost';
 $dbuser = 'Misakuja';
-$dbpass = '1';
+$dbpass = '';
 $dbname = 'PROJECT';
 
 try {

@@ -67,12 +67,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!--Restaurant Banner-->
 <div class="restaurant-container">
-    <header class="middle-text">
+    <a href="../RestaurantPage/01-LandingPage.php" class="middle-text" id="SafariStopBanner">
         <h1>
             <strong>Safari Stop</strong>
-            Coming Soon~
+            Click to check our fine restaurant~
         </h1>
-    </header>
+    </a>
     <div class="restaurant-background"><img src="https://i.imgur.com/i7l5cQx.jpeg" alt="restaurant-background"></div>
 </div>
 

@@ -245,6 +245,13 @@ body {
             font-size: 40px;
         }
     }
+    #SafariStopBanner  {
+        text-decoration: none;
+    }
+
+    #SafariStopBanner:hover {
+        color: #bcbab8;
+    }
 
     .restaurant-background {
         position: relative;
