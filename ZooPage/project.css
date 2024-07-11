@@ -1,0 +1,1106 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: "Times New Roman", sans-serif;
+    background-color: #e6e1dc;
+}
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* TOP NAV */
+.top-nav-container {
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    z-index: 2;
+    min-height: 75px;
+
+    .top-nav-item {
+        color: white;
+        cursor: pointer;
+        width: fit-content;
+    }
+
+    #burger-menu {
+        font-size: 45px;
+        margin-left: 20px;
+    }
+
+    #register-login-button {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 25px;
+
+        button {
+            font-family: "Times New Roman", sans-serif;
+            background-color: rgba(255, 255, 255, 0.35);
+            color: #000000;
+            font-size: 25px;
+            border-radius: 25px;
+            border: none;
+            padding: 10px 25px;
+            box-shadow: none;
+        }
+
+        button:active {
+            color: #ffffff;
+        }
+
+        button:hover {
+            color: #393535;
+        }
+    }
+
+    #logo-top {
+        height: 50px;
+        width: 100px;
+        margin-right: 20px;
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px;
+    }
+}
+
+/* HEADER */
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#header-background {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    transition: background-image 1s;
+    box-shadow: 0 5px 15px 0 rgba(106, 106, 106, 0.75);
+
+
+    .middle-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 25px;
+        color: white;
+        padding: 10px 50px;
+        z-index: 0;
+        text-align: center;
+
+        a {
+            display: inline;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 50px;
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: #a3958b;
+        }
+
+    }
+}
+
+/* SIDENAV MENU */
+.side-nav-container {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    transition: 0.5s;
+    padding: 75px 0;
+
+    a, button {
+        font-family: "Times New Roman", sans-serif;
+        background-color: transparent;
+        border: none;
+        padding: 8px 10px 8px 25px;
+        font-size: 23px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    a:hover, button:hover {
+        color: #f1f1f1;
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+/* FLEX FOR BUTTONS GRID */
+.button-banners-flexContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    button {
+        font-family: "Times New Roman", sans-serif;
+        font-size: 28px;
+        letter-spacing: 4px;
+        border: 1px solid rgb(115, 110, 105, 0.3);
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 1;
+        box-sizing: border-box;
+        background-color: rgb(223, 216, 208);
+    }
+
+    button:hover {
+        background-color: #c6c6c6;
+    }
+}
+
+/* GRID FOR BUTTONS */
+.button-banners-gridContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 0 10%;
+
+    #species-button-form {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        button {
+            padding: 25px 150px;
+            margin: 25px 0 15px 0;
+            width: auto;
+        }
+    }
+
+    button {
+        padding: 25px 150px;
+        width: 100%;
+    }
+}
+
+/* RESTAURANT BANNER */
+.restaurant-container {
+    position: relative;
+    margin-top: 50px;
+    border-top: 5px solid rgb(115, 110, 105);
+    border-bottom: 5px solid rgb(115, 110, 105);
+    width: 100%;
+
+    .middle-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 25px;
+        color: white;
+        padding: 0 50px;
+        z-index: 1;
+        text-align: center;
+
+        h1 strong {
+            display: block;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 75px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    .restaurant-background {
+        position: relative;
+        z-index: 0;
+    }
+
+    .restaurant-background img {
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        margin-bottom: -5px;
+    }
+}
+
+/* ZOO INFO */
+.info-container {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    border-bottom: 3px solid rgb(136, 131, 125);
+
+    #top-info {
+        h1 {
+            background-color: rgb(209, 202, 194);
+            color: #2b2927;;
+            font-size: 45px;
+            padding: 12px 0;
+            letter-spacing: 10px;
+        }
+
+        p {
+
+            color: #2b2927;;
+            font-size: 21px;
+            margin: 15px 25px;
+        }
+    }
+
+    #bottom-info {
+        h1 {
+            background-color: rgb(209, 202, 194);
+            color: #2b2927;;
+            font-size: 35px;
+            padding: 12px 0;
+            letter-spacing: 10px;
+        }
+
+        .circles {
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            width: fit-content;
+            margin: 0 auto;
+
+
+            h2 {
+                font-size: 35px;
+                margin: 0;
+                color: white;
+                transition: 0.3s;
+
+            }
+
+            p {
+                color: white;
+                transition: 0.3s;
+
+            }
+
+            .numbers-circle {
+                background-color: rgba(87, 83, 80, 0.5);
+                border-radius: 50%;
+                width: 250px;
+                height: 250px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                margin: 10px;
+            }
+        }
+    }
+}
+
+/* BOTTOM NAV */
+.bottom-nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 100px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+
+    .bottom-nav-item {
+        padding: 8px 10px 8px 25px;
+        font-size: 18px;
+        display: block;
+        margin: 10px;
+    }
+
+    #logo-bottom img {
+        width: 150px;
+        height: auto;
+    }
+
+    #bottom-nav-left p {
+        font-style: italic;
+    }
+
+    #bottom-nav-right a {
+        text-decoration: none;
+        color: #2b2927;;
+        display: block;
+        margin: 10px 0 20px 0;
+        font-size: 20px;
+
+    }
+
+    #bottom-nav-right a:hover {
+        color: #a3958b;
+    }
+}
+
+
+/* PAGE 2 - CONTACT INFO */
+.contactInfo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    width: 100%;
+    height: 300px;
+    font-size: 30px;
+
+    .contactInfo-phone,
+    .contactInfo-mail {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 30px;
+        border-radius: 50px;
+        width: calc(50% - 40px);
+        max-width: 300px;
+        align-items: center;
+        margin: 0 20px;
+        box-sizing: border-box;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+
+        h3 {
+            margin: 25px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    }
+
+    img {
+        margin-top: 15px;
+        width: 100px;
+    }
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 0;
+    box-sizing: border-box;
+
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+
+
+        h3 {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+
+        img {
+            width: 40px;
+        }
+    }
+
+    label {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    button[type="submit"] {
+        margin-top: 20px;
+        padding: 12px 20px;
+        font-size: 18px;
+        background-color: #786c60;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #473f36;
+    }
+}
+
+/* PAGE 3 - Regulations */
+.regulations {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+
+    h2 {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #2b2927;;
+        font-size: 35px;
+        padding: 12px 0;
+        letter-spacing: 10px;
+        margin: 50px 0 0 0;
+    }
+
+    h4 {
+        text-align: left;
+        color: #2b2927;;
+        font-size: 25px;
+        padding: 12px 0;
+        margin-top: 50px;
+        margin-left: 100px;
+    }
+
+    p {
+        text-align: left;
+        margin-top: 15px;
+        font-size: 18px;
+        margin-left: 100px;
+    }
+}
+
+/* PAGE 4 - OPENING HOURS */
+#opening-hours-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        background-color: rgb(209, 202, 194);
+        color: #2b2927;;
+        font-size: 35px;
+        padding: 12px 0;
+        letter-spacing: 10px;
+        margin: 50px 0 0 0;
+    }
+
+    table {
+        margin-top: 50px;
+        width: 50%;
+        border-collapse: collapse;
+
+        th {
+            background-color: rgb(211, 204, 196);
+        }
+
+        th, td {
+            border: 1px solid #8c8888;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+    }
+}
+
+/* PAGE 5 - TICKETS */
+.cart-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+        width: 25%;
+        text-align: center;
+        background-color: rgb(209, 202, 194);
+        color: #2b2927;
+        font-size: 35px;
+        padding: 20px 0;
+        margin: 50px 0 0 0;
+        border-radius: 25px;
+    }
+}
+
+.information-cart {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(209, 202, 194);
+    color: #2b2927;
+    font-size: 35px;
+    padding: 20px 0;
+    margin: 50px 0 0 0;
+}
+
+#tickets-table-container {
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+}
+
+#tickets-table {
+    width: 75%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+
+    th {
+        background-color: rgb(211, 204, 196);
+        color: #333;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 2px solid #ddd;
+    }
+
+    td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            button {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+                cursor: pointer;
+                width: 30px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            button:hover {
+                background-color: #e0e0e0;
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+        color: #666;
+        margin: 5px 0 0 0;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    button[type="submit"] {
+        background-color: #786c60;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #473f36;
+    }
+}
+
+#cart-actions-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    button[type="submit"] {
+        background-color: #786c60;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #473f36;
+    }
+}
+
+#cart-table {
+    width: 75%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+
+
+    th, td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: rgb(211, 204, 196);
+        color: #333;
+        font-weight: bold;
+    }
+}
+
+/* PAGE 6 - LOGIN */
+.forms-page {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #register-login-forms {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+        gap: 20px;
+    }
+
+    form {
+        width: 45%;
+        min-width: 300px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+    }
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        border: none;
+    }
+
+    legend {
+        letter-spacing: 5px;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 20px;
+        font-size: 18px;
+        background-color: #786c60;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #473f36;
+    }
+
+}
+
+#notifications {
+    background-color: rgb(209, 202, 194);
+    color: #2b2927;;
+    text-align: center;
+    font-size: 30px;
+    padding: 12px 0;
+}
+
+
+/* PAGE 7 - EMPLOYEE ONLY */
+.forms-zookeeper {
+    form {
+        margin-bottom: 50px;
+    }
+}
+
+#info-employee-only {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        background-color: rgb(209, 202, 194);
+        padding: 10px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    #user-on-employee-site {
+        background-color: rgb(195, 188, 181);
+        box-sizing: border-box;
+        border-radius: 25px;
+        width: fit-content;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+        margin: 20px auto;
+    }
+}
+
+/* PAGE 8 & 9 - SPECIES AND ANIMAL PAGES */
+.edit-add-forms-container {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        background-color: rgb(209, 202, 194);
+        width: 100%;
+        color: #2b2927;
+        text-align: center;
+        font-size: 30px;
+        padding: 12px 0;
+        border-top: 3px solid rgba(115, 110, 105, 0.3);
+        border-bottom: 3px solid rgba(115, 110, 105, 0.3);
+    }
+
+    form {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+    }
+
+    .edit-add-forms-zookeeper {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 800px;
+        gap: 20px;
+    }
+
+    #species-add, #species-edit {
+        label {
+            font-size: 16px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="url"], input[type="number"], select {
+            width: calc(100% - 10px);
+        }
+
+        input[type="text"], input[type="url"], select, textarea {
+            padding: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    }
+
+    #animal-add, #animal-edit {
+        label {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"], input[type="url"], textarea, input[type="number"], input[type="date"] {
+            width: 100%;
+            font-size: 16px;
+            padding: 5px 0;
+            text-align: center;
+        }
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 6px 15px;
+        font-size: 18px;
+        background-color: #786c60;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #473f36;
+    }
+}
+
+#animal-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        background-color: rgb(209, 202, 194);
+        width: 100%;
+        text-align: center;
+        color: #2b2927;;
+        font-size: 35px;
+        padding: 12px 0;
+        letter-spacing: 10px;
+        margin: 50px 0 0 0;
+    }
+
+    table {
+        margin-top: 50px;
+        width: 50%;
+        border-collapse: collapse;
+
+        th {
+            background-color: rgb(211, 204, 196);
+        }
+
+        th, td {
+            border: 1px solid #8c8888;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
+.boxes {
+    width: 100%;
+    max-width: 1800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px auto;
+
+
+    .animal-species-box {
+        position: relative;
+        width: 300px;
+        height: 525px;
+        margin: 0 10px 10px 0;
+        overflow: hidden;
+        text-decoration: none;
+        color: #2b2927;
+
+        .animal-species-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .animal-species-information {
+            position: absolute;
+            bottom: 0;
+            height: 275px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+
+            button {
+                float: right;
+                padding: 3px 10px;
+                font-size: 18px;
+                background-color: #786c60;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #473f36;
+            }
+
+            #species-common-name {
+                margin: 0;
+                font-size: 25px;
+                text-align: center;
+            }
+
+            #animal-name {
+                margin: 20px;
+                font-size: 25px;
+                text-align: center;
+            }
+
+            h4 {
+                margin: 8px 0;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+
+
+                li {
+                    margin-bottom: 5px;
+                }
+
+                form {
+                    display: inline;
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                }
+            }
+
+            li:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+    }
+}
+
+/* MEDIA QUERIES FOR SMALLER SCREENS */
+@media (max-width: 1000px) {
+    .top-nav-container {
+        padding: 10px;
+    }
+
+    #burger-menu {
+        font-size: 35px;
+        margin-right: 10px;
+    }
+
+    #logo {
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+        flex: 0 0 auto;
+    }
+
+    .button-banners-flexContainer {
+        width: 100%;
+    }
+
+    .button-banners-gridContainer {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0 5%;
+
+        #species-button-form {
+            button {
+                padding: 15px 80px;
+                margin: 20px 0 10px 0;
+                box-sizing: border-box;
+            }
+        }
+
+        button {
+            padding: 15px 80px;
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .circles {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 800px) {
+    .circles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 799px) {
+    .circles {
+        grid-template-columns: 1fr;
+    }
+
+    .contactInfo-phone,
+    .contactInfo-mail {
+        width: calc(100% - 40px);
+        margin-right: 0;
+        font-size: 20px;
+    }
+}
