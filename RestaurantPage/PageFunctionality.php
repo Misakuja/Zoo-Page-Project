@@ -1,7 +1,7 @@
 <?php
 require_once 'LoginInterface.php';
 require_once 'PageFunctionality.php';
-require_once 'databases.php';
+require_once '../ZooPage/Databases.php';
 require_once 'User.php';
 require_once 'Food.php';
 
@@ -15,34 +15,41 @@ abstract class PageFunctionality implements LoginInterface {
 
     static function login(): string {
         global $pdo;
-        $email = $_POST['loginEmail'];
-        $password = $_POST['loginPassword'];
-        $userDetails = $pdo->query("SELECT * FROM users WHERE email = '$email'")->fetch(PDO::FETCH_ASSOC);
-        if ($userDetails) {
-            if (password_verify($password, $userDetails['password'])) {
-                $user = new User($userDetails['user_id'], $userDetails['username'], $userDetails['password'], $userDetails['email']);
-                $_SESSION['loggedInUser'] = $user;
-                return "Login successful";
-            } else {
-                return "Incorrect password";
-            }
+        $loginEmail = $_POST["loginEmail"];
+        $loginPassword = $_POST["loginPassword"];
+
+        $user = $pdo->query("SELECT * FROM users WHERE user_email = '$loginEmail'")->fetch(PDO::FETCH_ASSOC);
+        if ($user && password_verify($loginPassword, $user['user_password'])) {
+            $_SESSION['user_id'] = $user['user_id'];
+            $_SESSION['user_first_name'] = $user['user_first_name'];
+            $_SESSION['user_last_name'] = $user['user_last_name'];
+            $_SESSION['user_email'] = $user['user_email'];
+
+            if (isset($_SESSION['zookeeper_id'])) unset($_SESSION['zookeeper_id']);
+
+            return "Logged in successfully as " . $user['user_first_name'] . " " . $user['user_last_name'];
         } else {
-            return "Email not found";
+            return "Invalid Email or Password";
         }
     }
 
-    static function register(): string {
+
+
+    static function register(): void {
         global $pdo;
-        $username = $_POST['registerUsername'];
-        $password = $_POST['registerPassword'];
-        $email = $_POST['registerEmail'];
-        $user = $pdo->query("SELECT COUNT(*) FROM users WHERE email = '$email'");
-        if ($user == 0) {
-            return "Email already in use";
+        $firstName = $_POST["registerFirstName"];
+        $lastName = $_POST["registerLastName"];
+        $email = $_POST["registerEmail"];
+        $username = $_POST["registerUsername"];
+        $password = password_hash($_POST["registerPassword"], PASSWORD_DEFAULT);
+
+        $checkEmail = $pdo->query("SELECT * FROM users WHERE user_email = '$email'")->fetch(PDO::FETCH_ASSOC);
+        if ($checkEmail) {
+            $_SESSION['notification'] = "Email already registered";
         } else {
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            $pdo->exec("INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')");
-            return "Registration successful";
+            $sql = "INSERT INTO users (user_first_name, user_last_name, user_email, user_password, user_username) VALUES ('$firstName', '$lastName', '$email', '$password', '$username')";
+            $pdo->exec($sql);
+            $_SESSION['notification'] = "Registered successfully";
         }
     }
 

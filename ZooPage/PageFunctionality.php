@@ -31,13 +31,14 @@ class PageFunctionality implements PageInterface {
         $firstName = $_POST["registerFirstName"];
         $lastName = $_POST["registerLastName"];
         $email = $_POST["registerEmail"];
+        $username = $_POST["registerUsername"];
         $password = password_hash($_POST["registerPassword"], PASSWORD_DEFAULT);
 
         $checkEmail = $pdo->query("SELECT * FROM users WHERE user_email = '$email'")->fetch(PDO::FETCH_ASSOC);
         if ($checkEmail) {
             $_SESSION['notification'] = "Email already registered";
         } else {
-            $sql = "INSERT INTO users (user_first_name, user_last_name, user_email, user_password) VALUES ('$firstName', '$lastName', '$email', '$password')";
+            $sql = "INSERT INTO users (user_first_name, user_last_name, user_email, user_password, user_username) VALUES ('$firstName', '$lastName', '$email', '$password', '$username')";
             $pdo->exec($sql);
             $_SESSION['notification'] = "Registered successfully";
         }

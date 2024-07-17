@@ -1,6 +1,6 @@
 <header>
     <nav id="headerNav">
-        <?php if (isset($_SESSION['loggedInUser'])) { ?>
+        <?php if (isset($_SESSION['user_id'])) { ?>
             <form method="POST" action="">
                 <button type="submit" id="logoutHeaderButton" name="logoutButton" class="loginLogoutButton">Logout</button>
             </form>

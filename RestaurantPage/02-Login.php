@@ -49,6 +49,10 @@ if (isset($_POST['registerButton'])) {
             <legend><h1>Register</h1></legend>
             <label for="registerUsername">Username:</label>
             <input type="text" id="registerUsername" name="registerUsername" required>
+            <label for="registerFirstName">First Name:</label>
+            <input type="text" id="registerFirstName" name="registerFirstName" required>
+            <label for="registerLastName">Last Name:</label>
+            <input type="text" id="registerLastName" name="registerLastName" required>
             <label for="registerPassword">Password:</label>
             <input type="password" id="registerPassword" name="registerPassword" required>
             <label for="registerEmail">Email:</label>

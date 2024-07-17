@@ -75,7 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="registerPassword" name="registerPassword" required>
             <label for="registerEmail">Email:</label>
             <input type="email" id="registerEmail" name="registerEmail" required>
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" name="registerUsername" required>
             <button type="submit" name="registerUser">Register</button>
+
         </fieldset>
     </form>
     <!--LOGIN-->
